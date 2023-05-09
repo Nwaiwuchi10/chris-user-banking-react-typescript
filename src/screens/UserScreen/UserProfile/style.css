@@ -1,0 +1,93 @@
+.main-profile-div {
+  background-color: aliceblue;
+  width: 100%;
+  height: 100vh;
+}
+.div-flex-border-c {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+.user-border {
+  display: flex;
+  align-items: center;
+
+  width: 300px;
+  height: 120px;
+  border: 1px solid transparent;
+  background-color: white;
+
+  border-radius: 4px;
+  box-shadow: whitesmoke;
+  margin-bottom: 30px;
+  gap: 5px;
+  box-shadow: 3px 3px 20px rgb(201, 201, 243);
+}
+.user-border div {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: larger;
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.user-border div .write-up {
+  margin-left: 20px;
+  font-size: larger;
+  font-weight: 600;
+}
+.hold-icon {
+  font-size: 30px;
+}
+.trans-border {
+  width: 300px;
+  height: 250px;
+  justify-self: flex-start;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+}
+.input-label-input-dash {
+  width: 250px;
+  display: flex;
+}
+.div-btn-btn-dash {
+  width: 250px;
+  display: flex;
+  margin-left: 20px;
+}
+.use-button {
+  display: flex;
+  margin-left: 20px;
+}
+.field {
+  display: flex;
+  margin-left: 20px;
+}
+.deposit {
+  font-size: x-large;
+  font-weight: 600;
+  display: flex;
+  text-align: left;
+  padding-left: 20px;
+}
+.trans-border div {
+  margin-top: 10px;
+
+  /* justify-content: center;
+  align-items: center; */
+  margin-bottom: 5px;
+}
+@media (max-width: 1200px) {
+  .main-profile-div {
+    height: auto;
+  }
+}
