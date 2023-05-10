@@ -82,9 +82,14 @@ const RegisterScreen: React.FC<Props> = () => {
           setPassword("");
           setName("");
           setPhoneNumber("");
+          localStorage.setItem("Name", res.data.name);
           localStorage.setItem("email", res.data.email);
           localStorage.setItem("userId", res.data._id);
-
+          localStorage.setItem("AccountNumber", res.data.accoutnNumber);
+          localStorage.setItem("AccountName", res.data.accoutnName);
+          localStorage.setItem("BankName", res.data.bankName);
+          localStorage.setItem("PhoneNumber", res.data.phoneNumber);
+          localStorage.setItem("Token", res.data.token);
           localStorage.setItem("isAdmin", res.data.isAdmin);
           console.log(res.data);
           toast.success("post sucessful");
@@ -157,7 +162,8 @@ const RegisterScreen: React.FC<Props> = () => {
                       rows={4}
                       id="outlined-required"
                       label="Phone-Number "
-                      type="text"
+                      type="tel"
+                      name="phone"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
 

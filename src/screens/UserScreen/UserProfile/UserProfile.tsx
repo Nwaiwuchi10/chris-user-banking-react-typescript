@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserDashboard from "../UserDashboard/UserDashboard";
 import { FiUsers } from "react-icons/fi";
 import { HiOutlineUserGroup } from "react-icons/hi";
@@ -8,11 +8,35 @@ import "./style.css";
 import { FaHandHoldingMedical } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { Button, TextField } from "@mui/material";
+import axios from "axios";
+import { GetUsersApi } from "../../../Data/Api";
 const UserProfile = () => {
-  //   const user = localStorage.getItem("userId");
+  const user = localStorage.getItem("Name");
+  const id = localStorage.getItem("userId");
+  const [userId, setUserId] = useState({} as any);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await axios.get(GetUsersApi + id);
+      console.log(data);
+      setUserId(data);
+    };
+
+    fetchPosts();
+  }, [id]);
   return (
     <UserDashboard>
       <div className="main-profile-div">
+        <div
+          style={{
+            paddingTop: "20px",
+            marginBottom: "20px",
+            fontSize: "x-large",
+            textAlign: "center",
+          }}
+        >
+          Hello {user}, Welcome to your Dashboard
+        </div>
         <div className="div-flex-border-c">
           <div className="user-border">
             <div>
@@ -43,7 +67,7 @@ const UserProfile = () => {
           <div className="user-border">
             <div>
               <div>Total Balance</div>
-              <p className="write-up">$600</p>
+              <p className="write-up">${userId.accountBalance} </p>
             </div>
             <div>
               {" "}

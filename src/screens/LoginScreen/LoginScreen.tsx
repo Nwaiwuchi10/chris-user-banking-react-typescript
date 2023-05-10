@@ -75,11 +75,15 @@ const LoginScreen: React.FC<Props> = () => {
         if (res.data) {
           setEmail("");
           setPassword("");
-
+          localStorage.setItem("Name", res.data.name);
           localStorage.setItem("email", res.data.email);
           localStorage.setItem("userId", res.data._id);
-
+          localStorage.setItem("AccountNumber", res.data.accoutnNumber);
+          localStorage.setItem("AccountName", res.data.accoutnName);
+          localStorage.setItem("BankName", res.data.bankName);
+          localStorage.setItem("PhoneNumber", res.data.phoneNumber);
           localStorage.setItem("Token", res.data.token);
+          localStorage.setItem("isAdmin", res.data.isAdmin);
           console.log(res.data);
           toast.success("post sucessful");
           navigate("/");

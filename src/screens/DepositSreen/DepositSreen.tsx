@@ -20,14 +20,14 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { Container } from "react-bootstrap";
-import { UserLoginApi } from "../../Data/Api";
+import { DepositApi, UserLoginApi } from "../../Data/Api";
 import { Deposit, UserLogin } from "../../Data/DataTypes";
 import CircularIndeterminate from "../../components/Loader/Loader";
 import UserDashboard from "../UserScreen/UserDashboard/UserDashboard";
 type Props = {};
 const DepositScreen: React.FC<Props> = () => {
   const navigate = useNavigate();
-
+  const user = localStorage.getItem("userId");
   const [amount, setAmount] = useState("");
 
   const [userId, setUserId] = useState(localStorage.getItem("userId") as any);
@@ -65,7 +65,7 @@ const DepositScreen: React.FC<Props> = () => {
     };
 
     axios
-      .post(UserLoginApi, data, headers)
+      .post(DepositApi + user, data, headers)
 
       .then((res) => {
         console.log(res.data);
