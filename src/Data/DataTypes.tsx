@@ -12,7 +12,7 @@ export interface UserReg {
   confirmPassword: String;
 }
 export interface Deposit {
-  amount: String;
+  amount: Number;
 
   userId: any;
 }

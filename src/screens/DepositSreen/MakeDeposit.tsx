@@ -24,9 +24,9 @@ import { DepositApi, UserLoginApi } from "../../Data/Api";
 import { Deposit, UserLogin } from "../../Data/DataTypes";
 import CircularIndeterminate from "../../components/Loader/Loader";
 import UserDashboard from "../UserScreen/UserDashboard/UserDashboard";
-import MakeDeposit from "./MakeDeposit";
 type Props = {};
-const DepositScreen: React.FC<Props> = () => {
+
+const MakeDeposit: React.FC = () => {
   const navigate = useNavigate();
   const user = localStorage.getItem("userId");
   const [amount, setAmount] = useState(Number);
@@ -81,7 +81,7 @@ const DepositScreen: React.FC<Props> = () => {
           // localStorage.setItem("Token", res.data.token);
           console.log(res.data);
           toast.success("post sucessful");
-          navigate("/");
+          navigate("/makeWithdrawal");
         } else {
           toast.error(res.data.error);
         }
@@ -94,72 +94,38 @@ const DepositScreen: React.FC<Props> = () => {
       });
   };
   return (
-    <UserDashboard>
-      <div className="userl-div">
-        <Container>
-          <div
-            className="img-background"
-            style={{
-              backgroundImage: `url(${deposit})`,
-            }}
-          ></div>
-          <div className="form-background-color">
-            <div className="form-card">
-              <div className=" card-body p-4 p-md-5">
-                <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2 d-flex justify-content-center">
-                  Deposit Form
-                </h3>
-                <p
-                  className="d-flex justify-content-center"
-                  style={{ marginLeft: "15px" }}
-                >
-                  *pls all the blanck inputs are been required*
-                </p>
-                <form onSubmit={submitHandler}>
-                  <div className="form-div-input">
-                    <div className="col mb-4">
-                      <TextField
-                        className="input-label-input-divs"
-                        required
-                        rows={4}
-                        id="outlined-required"
-                        label="Amount "
-                        type="number"
-                        value={amount}
-                        onChange={(e) => setAmount(parseInt(e.target.value))}
-
-                        //   defaultValue="Match Day"
-                      />
-                    </div>
-
-                    {loading ? (
-                      <CircularIndeterminate />
-                    ) : (
-                      <div
-                        className=""
-
-                        // onClick={handleLoader}
-                      >
-                        <Button
-                          className="div-btn-btn"
-                          onSubmit={handleLoader}
-                          type="submit"
-                          variant="contained"
-                        >
-                          Make Deposit
-                        </Button>
-                        <ToastContainer />
-                      </div>
-                    )}
-                  </div>
-                </form>
-              </div>
-            </div>
+    <div>
+      <form onSubmit={submitHandler}>
+        <div className="col mb-4 field">
+          <TextField
+            className="input-label-input-dash"
+            required
+            rows={4}
+            id="outlined-required"
+            label="Amount "
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(parseInt(e.target.value))}
+          />
+        </div>
+        {loading ? (
+          <CircularIndeterminate />
+        ) : (
+          <div className="use-button">
+            <Button
+              className="div-btn-btn-dash"
+              variant="contained"
+              onSubmit={handleLoader}
+              type="submit"
+            >
+              Make a Deposit
+            </Button>
+            <ToastContainer />
           </div>
-        </Container>
-      </div>
-    </UserDashboard>
+        )}
+      </form>
+    </div>
   );
 };
 
-export default DepositScreen;
+export default MakeDeposit;

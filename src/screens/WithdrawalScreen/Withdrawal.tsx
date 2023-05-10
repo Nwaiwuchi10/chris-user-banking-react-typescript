@@ -28,7 +28,7 @@ type Props = {};
 const Withdrawal: React.FC<Props> = () => {
   const navigate = useNavigate();
   const user = localStorage.getItem("userId");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState(Number);
 
   const [userId, setUserId] = useState(localStorage.getItem("userId") as any);
 
@@ -71,7 +71,7 @@ const Withdrawal: React.FC<Props> = () => {
         console.log(res.data);
         setLoading(false);
         if (res.data) {
-          setAmount("");
+          setAmount(Number);
           setUserId("");
 
           // localStorage.setItem("email", res.data.email);
@@ -123,9 +123,9 @@ const Withdrawal: React.FC<Props> = () => {
                         rows={4}
                         id="outlined-required"
                         label="Amount "
-                        type="text"
+                        type="number"
                         value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(parseInt(e.target.value))}
 
                         //   defaultValue="Match Day"
                       />

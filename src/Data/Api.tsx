@@ -1,10 +1,6 @@
-export const UserLoginApi =
-  "http://chris-nestjs-backend-banking.vercel.app/auth/login/";
-export const UserRegApi =
-  "http://chris-nestjs-backend-banking.vercel.app/auth/signup/";
-export const DepositApi =
-  "http://chris-nestjs-backend-banking.vercel.app/transaction/deposit/";
-export const WithdrawalApi =
-  "http://chris-nestjs-backend-banking.vercel.app/transaction/withdrawal/";
-export const GetUsersApi =
-  "http://chris-nestjs-backend-banking.vercel.app/auth/";
+export const UserLoginApi = "http://localhost:5000/auth/login/";
+export const UserRegApi = "http://localhost:5000/auth/signup/";
+export const DepositApi = "http://localhost:5000/transaction/deposits/";
+export const WithdrawalApi = "http://localhost:5000/transaction/withdrawal/";
+export const GetUsersApi = "http://localhost:5000/auth/";
+export const TransHistoryApi = "http://localhost:5000/transaction/history/";
