@@ -9,3 +9,4 @@ export const GetUsersApi =
   "https://chris-nestjs-backend-banking.vercel.app/auth/";
 export const TransHistoryApi =
   "https://chris-nestjs-backend-banking.vercel.app/transaction/history/";
+export const TestApi = "http://localhost:5000/transaction/history/";
