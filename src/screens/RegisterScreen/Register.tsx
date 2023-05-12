@@ -21,8 +21,8 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { Container } from "react-bootstrap";
-import { UserLoginApi, UserRegApi } from "../../Data/Api";
-import { UserLogin, UserReg } from "../../Data/DataTypes";
+import { UserRegApi } from "../../Data/Api";
+import { UserReg } from "../../Data/DataTypes";
 import CircularIndeterminate from "../../components/Loader/Loader";
 type Props = {};
 const RegisterScreen: React.FC<Props> = () => {
