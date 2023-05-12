@@ -10,7 +10,7 @@ import { BiMoneyWithdraw } from "react-icons/bi";
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import { DepositApi, GetUsersApi, WithdrawalApi } from "../../../Data/Api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Deposit } from "../../../Data/DataTypes";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -127,7 +127,7 @@ const UserProfile = () => {
           <div className="user-border">
             <div>
               <div>Total Withdrawal</div>
-              <p className="write-up">$600</p>
+              <p className="write-up">$500</p>{" "}
             </div>
             <div>
               {" "}
@@ -203,9 +203,11 @@ const UserProfile = () => {
             </div>
 
             <div className="use-button">
-              <Button className="div-btn-btn-dash" variant="contained">
-                View Transactions
-              </Button>
+              <Link to="/history">
+                <Button className="div-btn-btn-dash" variant="contained">
+                  View Transactions
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
