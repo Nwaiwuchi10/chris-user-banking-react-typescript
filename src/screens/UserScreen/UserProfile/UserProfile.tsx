@@ -84,7 +84,8 @@ const UserProfile = () => {
           // localStorage.setItem("Token", res.data.token);
           console.log(res.data);
           toast.success("post sucessful");
-          navigate("/makeDeposit");
+          navigate("/");
+          window.location.reload();
         } else {
           toast.error(res.data.error);
         }
